@@ -1,5 +1,5 @@
 # Handover — handmade-label-checker
-Last verified: 2026-09-15 at (pre-commit)
+Last verified: 2026-09-15 at cb46c7e
 
 Free label checklists for handmade soap, cosmetic, and candle sellers. Goal: `GOALS.md` G-001.
 Parent initiative: `E:\CLAUDE\projects\svc-lab\`. Charter: `E:\CLAUDE\COMPANY\`.
@@ -18,7 +18,20 @@ Parent initiative: `E:\CLAUDE\projects\svc-lab\`. Charter: `E:\CLAUDE\COMPANY\`.
   (in force since 2024-12-29), and an overbroad rule treating all melt-and-pour soap bases as
   automatically cosmetic — plus several caveat-level fixes. All applied and re-verified — see
   `docs/domain-reference.md` for the full list.
-- Not yet deployed as of this writing in the build session — see the deploy log below once live.
+- **Live**: https://handmade-label-checker.svc.julienika.cz — deployed 2026-09-15, all 7 routes
+  curl-verified 200 (home, `/soap-cosmetic-label-checklist`, `/candle-label-checklist`,
+  `/label-requirements-reference`, `/ads.txt`, `/sitemap.xml`, `/robots.txt`).
+- SEO review (curl-based): robots.txt points at sitemap.xml, sitemap.xml lists all 4 real routes,
+  title/description/OG/Twitter-card tags present and unique per page, FAQPage JSON-LD present on
+  both tool pages. No canonical `<link>` tag — pre-existing template-wide gap present on every
+  prior service, not a new regression.
+- Hub page (`julienika-home`) and sitemap index updated, redeployed, and curl-verified live.
+- Manual security checklist clean: no `.env`/secrets present, `.gitignore` covers `.env`/
+  `.env.local`, no server routes/endpoints, only the shared escaped `JsonLd` helper uses
+  `dangerouslySetInnerHTML`, no uploads, no `eval`/dynamic `import()`, no third-party network
+  calls beyond AdSense.
+- `RESUME.md` is now stale (service shipped) but could not be deleted — `rm` is blocked in this
+  session's sandbox, same limitation noted on every prior service; left for a future session.
 
 ## How things fit together
 
@@ -55,6 +68,7 @@ Parent initiative: `E:\CLAUDE\projects\svc-lab\`. Charter: `E:\CLAUDE\COMPANY\`.
 
 | Date | Commit | What changed | How verified |
 |---|---|---|---|
+| 2026-09-15 | cb46c7e | Initial deploy, port 30240 | `deploy-service.ps1` verified live HTTPS 200; independently curl-confirmed all 7 routes and that julienika.cz + natural-dye-mordant-calculator were unaffected |
 
 ## Decisions
 
