@@ -1,6 +1,11 @@
 # Handover — handmade-label-checker
 Last verified: 2026-09-15 at 8b433f4
 
+> **SUSPENDED (Owner, 2026-09-27)** — part of the svc-lab family, suspended because it did not work out as expected.
+> No new work; security upkeep only while anything of it is live. Treat its code, formulas and
+> decisions as a **lower-reliability reference**: they may or may not still work, so re-verify before
+> reusing anything. Rules: `E:\CLAUDE\COMPANY\GOALS.md` → "Suspended projects".
+
 Free label checklists for handmade soap, cosmetic, and candle sellers. Goal: `GOALS.md` G-001.
 Parent initiative: `E:\CLAUDE\projects\svc-lab\`. Charter: `E:\CLAUDE\COMPANY\`.
 
